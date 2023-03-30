@@ -34,3 +34,40 @@ def fib(n):
     return fib_array[n]
 
 print(f"Fibonacci clássico: {fib(5)}")
+
+
+#MEMOIZED-FIBO (f, n)
+# para i ← 0 até n faça
+#      f [i] ← −1
+# devolva LOOKUP-FIBO (f, n)
+
+#LOOKUP-FIBO (f, n)
+# se f [n] ≥ 0
+#     então devolva f [n]
+# se n ≤ 1
+# então f [n] ← n
+# senão f [n] ← LOOKUP-FIBO(f, n − 1) + LOOKUP-FIBO(f, n − 2)
+# devolva f [n]
+
+def memoized_fibo(n):
+    fib_array = list()
+
+    for i in range(0, n + 1):
+        fib_array.insert(i, -1)
+    
+    return lookup_fibo(fib_array, n)
+
+def lookup_fibo(fib_array, n):
+    current_element = fib_array[n]
+
+    if(current_element >= 0):
+        return current_element
+    
+    if(n <= 1):
+        fib_array[n] = n
+    else:
+        fib_array[n] = lookup_fibo(fib_array, n - 1) + lookup_fibo(fib_array, n - 2)
+
+    return fib_array[n]
+
+print(f"Fibonacci memo: {memoized_fibo(5)}")
