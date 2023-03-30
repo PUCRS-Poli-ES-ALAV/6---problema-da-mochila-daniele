@@ -13,7 +13,7 @@ def fib_rec(n):
         b = fib_rec(n-2)
         return a + b
 
-print(f"Fibonacci recursivo: {fib_rec(5)}")
+print(f"Fibonacci recursivo: {fib_rec(test_value)}")
 
 #FIBO (n)
 #     f [0] ← 0 
@@ -33,7 +33,7 @@ def fib(n):
 
     return fib_array[n]
 
-print(f"Fibonacci clássico: {fib(5)}")
+print(f"Fibonacci clássico: {fib(test_value)}")
 
 
 #MEMOIZED-FIBO (f, n)
@@ -70,4 +70,4 @@ def lookup_fibo(fib_array, n):
 
     return fib_array[n]
 
-print(f"Fibonacci memo: {memoized_fibo(5)}")
+print(f"Fibonacci memo: {memoized_fibo(test_value)}")
