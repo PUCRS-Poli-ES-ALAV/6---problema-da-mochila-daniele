@@ -13,7 +13,7 @@ def fib_rec(n):
         b = fib_rec(n-2)
         return a + b
 
-print(fib_rec(5))
+print(f"Fibonacci recursivo: {fib_rec(5)}")
 
 #FIBO (n)
 #     f [0] ← 0 
@@ -22,13 +22,15 @@ print(fib_rec(5))
 #        f[i] ← f[i-1]+f[i-2]
 # devolva f [n]
 
-fib = []
+fib_array = list()
 
-def fib(n);
-    fib[0] = 0
-    fib[1] = 1
+def fib(n):
+    fib_array.insert(0, 0)
+    fib_array.insert(1, 1)
 
-    for i in range(2..n):
-        fib[i] = fib[i-1] + fib[i-2]
+    for i in range(2, n + 1):
+        fib_array.insert(i, fib_array[i-1] + fib_array[i-2])
 
-    return f[n]
+    return fib_array[n]
+
+print(f"Fibonacci clássico: {fib(5)}")
